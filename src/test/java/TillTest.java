@@ -23,4 +23,16 @@ public class TillTest {
     public void hasCurrentBalance() {
         assertEquals(20000.00, till.getCurrentBalance(), 0.01);
     }
+
+    @Test
+    public void canReduceBalance() {
+        till.reduceBalance(5000.00);
+        assertEquals(15000.00, till.getCurrentBalance(), 0.01);
+    }
+
+    @Test
+    public void canIncreaseBalance() {
+        till.increaseBalance(5000.00);
+        assertEquals(25000.00, till.getCurrentBalance(), 0.01);
+    }
 }

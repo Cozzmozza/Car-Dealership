@@ -2,7 +2,7 @@ import vehicles.Vehicle;
 
 import java.util.ArrayList;
 
-public class Dealership {
+public class Dealership implements IBuyVehicle {
 
     private ArrayList<Vehicle> carType;
     private Till till;
@@ -18,5 +18,19 @@ public class Dealership {
 
     public Till getTill() {
         return till;
+    }
+
+
+    public void addVehicle(Vehicle vehicle){
+        carType.add(vehicle);
+    }
+
+    public void reduceMoney(Vehicle vehicle) {
+        this.till.reduceBalance(vehicle.getPrice());
+    }
+
+    public void buyVehicle(Vehicle vehicle){
+        addVehicle(vehicle);
+        reduceMoney(vehicle);
     }
 }

@@ -44,4 +44,21 @@ public class CustomerTest {
         testArraylist.add(car);
         assertEquals(testArraylist, customer.getOwnedVehicles());
     }
+
+    @Test
+    public void canReduceMoney(){
+        customer.reduceMoney(car);
+        assertEquals(1000.00, customer.getMoney(), 0.01);
+    }
+
+    @Test
+    public void customerCanBuyVehicle(){
+        customer.buyVehicle(car);
+
+        testArraylist = new ArrayList<>();
+        testArraylist.add(car);
+
+        assertEquals(testArraylist, customer.getOwnedVehicles());
+        assertEquals(1000.00, customer.getMoney(), 0.01);
+    }
 }

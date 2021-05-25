@@ -15,4 +15,12 @@ public class Till {
     public double getCurrentBalance() {
         return currentBalance;
     }
+
+    public void reduceBalance(double amount) {
+        currentBalance -= amount;
+    }
+
+    public void increaseBalance(double amount) {
+        currentBalance += amount;
+    }
 }
